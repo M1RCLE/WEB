@@ -256,6 +256,29 @@ header .nav-bar {
     border-bottom: 2px solid #ff6600;
 }
 
+.wrapper {
+    border-style: solid;
+    border-radius: var(--border-radius-m);
+    border-color: var(--medium-gray-color);
+    font-weight: bold;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.wrapper>div:nth-child(10n+1),
+.wrapper>div:nth-child(10n+2),
+.wrapper>div:nth-child(10n+3),
+.wrapper>div:nth-child(10n+4),
+.wrapper>div:nth-child(10n+5)
+{
+  background: var(--primary-color);
+  color: var(--white-color);
+}
+
 @media screen and (max-width: 1024px) {
 
     .menu-section .menu-list {
