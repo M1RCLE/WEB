@@ -250,6 +250,12 @@ header .nav-bar {
 
 }
 
+.nav-item .active {
+    color: #ff6600;
+    font-weight: bold;
+    border-bottom: 2px solid #ff6600;
+}
+
 @media screen and (max-width: 1024px) {
 
     .menu-section .menu-list {

@@ -16,17 +16,14 @@
                 </a>
                 <ul class="nav-menu">
                     <button id="menu-close-button" class="fas fa-times"></button>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
+                    <li class="nav-item-side-side">
+                        <a href="#" class="nav-link">Ownership</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Themes</a>
+                    <li class="nav-item-side">
+                        <a href="#" class="nav-link">Smart Pointers</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Photos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Contact</a>
+                    <li class="nav-item-side">
+                        <a href="#" class="nav-link">Traits</a>
                     </li>
                 </ul>
                 <button id="menu-open-button" class="fas fa-bars"></button>
@@ -73,17 +70,23 @@
                 <div class="section-content">
                     <ul class="menu-list">
                         <li class="menu-item">
-                            <img src="imgs/ownership.png" alt="Ownership" class="menu-image">
+                            <a href="ownership.html">
+                                <img src="imgs/ownership.png" alt="Ownership" class="menu-image">
+                            </a>
                             <h3 class="name">Ownership</h3>
-                            <p class="text">New concepts of memory controle</p>
+                            <p class="text">New concepts of memory control</p>
                         </li>
-                        <li class="menu-item">
-                            <img src="imgs/smart-pointers.png" alt="SmartPointers" class="menu-image">
+                        <li class="menu-item"> 
+                            <a href="smart-pointers.html">
+                                <img src="imgs/smart-pointers.png" alt="SmartPointers" class="menu-image">
+                            </a>
                             <h3 class="name">Smart pointers</h3>
                             <p class="text">Work with old but gold ideas</p>
                         </li>
                         <li class="menu-item">
-                            <img src="imgs/traits.png" alt="Traits" class="menu-image">
+                            <a href="traits.html">
+                                <img src="imgs/traits.png" alt="Traits" class="menu-image">
+                            </a>
                             <h3 class="name">Traits</h3>
                             <p class="text">Look like interfaces but don't believe them</p>
                         </li>
@@ -91,27 +94,9 @@
                 </div>
             </section>
         </main>
-        <aside>
-            <h1>Темы моего сайта</h1>
-            <ul>
-                <li><a href="/memory.html">Управление памятью(owners)</a></li>
-                <li><a href="/references.html">Указатели(references)</a></li>
-            </ul>
-        </aside>
-        <!-- <footer>
-            <h3>полезные ссылки</h3>
-            <nav>
-                <a href="https://t.me/Ta1yAnGsHeN">
-                    <img src="/imgs/telegram.png" width="60" height="60">
-                </a>
-                <a href="https://github.com/M1RCLE">
-                    <img src="/imgs/github.png" width="60" height="60">
-                </a>
-                <a href="https://doc.rust-lang.org/book/title-page.html">
-                    <img src="/imgs/rust.png" width="60" height="60">
-                </a>
-            </nav>
-        </footer> -->
-        <script src="script.js"></script>
+        <footer id="footer">
+            <p id="load-time-info"></p>
+        </footer>
+        <script src="scripts/script.js"></script>
     </body>
 </html>
