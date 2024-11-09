@@ -161,7 +161,7 @@ img {
     padding: 10px 20px;
     font-size: var(--font-size-n);
     color: var(--white-color);
-    background-color: var(--secondary-color);
+    background-color: var(--medium-gray-color);
     border: none;
     border-radius: var(--border-radius-s);
     cursor: pointer;
@@ -169,7 +169,7 @@ img {
 }
 
 .home-button:hover {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--white-color);
 }
 
@@ -216,13 +216,13 @@ header .nav-bar {
 }
 
 .content-section {
-    margin-left: 270px; /* To make room for the side navigation */
+    /* margin-left: 270px; */
     padding: 20px;
 }
 
 /* Optional: Styles for the button and the main content */
 .home-button {
-    background-color: #4CAF50;
+    background-color: var(--medium-gray-color);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -230,29 +230,10 @@ header .nav-bar {
 }
 
 .home-button:hover {
-    background-color: #45a049;
+    background-color: var(--secondary-color);
 }
 
 @media screen and (max-width: 768px) {
-    .title {
-        font-size: var(--font-size-l);
-    }
-
-    .subtytle {
-        font-size: var(--font-size-m);
-    }
-
-    .description {
-        font-size: var(--font-size-s);
-    }
-
-    code, pre {
-        font-size: var(--font-size-s);
-        padding: 10px;
-    }
-}
-
-@media screen and (max-width: 900px) {
 
     :root {
         --font-size-s: 0.7rem;
@@ -313,5 +294,18 @@ header .nav-bar {
         display: block;
         margin-top: 17px;
         font-size: var(--font-size-l);
+    }
+
+    .title {
+        font-size: var(--font-size-l);
+    }
+
+    .subtytle {
+        font-size: var(--font-size-m);
+    }
+
+    code, pre, p {
+        font-size: var(--font-size-s);
+        padding: 10px;
     }
 }

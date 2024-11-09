@@ -24,7 +24,7 @@ menuCloseButton.addEventListener("click", () => menuOpenButton.click());
 })();
 
 document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll(".nav-item-side .nav-link");
+    const navLinks = document.querySelectorAll(".nav-item .nav-link");
     const currentPath = document.location.pathname;
     navLinks.forEach(link => {
         const linkPath = new URL(link.href).pathname;
