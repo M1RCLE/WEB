@@ -1,107 +1,73 @@
+
 const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
 
-todoForm.addEventListener('submit', function (event) {
+document.addEventListener('DOMContentLoaded', loadTasks);
+
+function addTask(event) {
     event.preventDefault();
 
     const taskText = todoInput.value.trim();
-    if (!taskText) return;
+    if (taskText === "") {
+        alert("Please enter a task.");
+        return;
+    }
 
-    const listItem = document.createElement('li');
-    listItem.innerHTML = `
-        <span>${taskText}</span>
-        <button class="mark-done">Mark as Done</button>
-    `;
-
+    const listItem = createTaskElement(taskText);
     todoList.appendChild(listItem);
+
+    saveTaskToLocalStorage(taskText);
+
     todoInput.value = '';
+}
 
-    listItem.querySelector('.mark-done').addEventListener('click', function () {
-        listItem.classList.toggle('done');
+function createTaskElement(taskText) {
+    const listItem = document.createElement('li');
+    listItem.className = 'todo-item';
+
+    const taskSpan = document.createElement('span');
+    taskSpan.textContent = taskText;
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.className = 'delete-button';
+
+    listItem.appendChild(taskSpan);
+    listItem.appendChild(deleteButton);
+
+    deleteButton.addEventListener('click', () => {
+        listItem.remove();
+        removeTaskFromLocalStorage(taskText);
     });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll(".nav-item .nav-link");
-    const currentPath = document.location.pathname;
-    navLinks.forEach(link => {
-        const linkPath = new URL(link.href).pathname;
-        if (linkPath === currentPath) {
-            link.classList.add("active");
-        }
-    });
-});
+    return listItem;
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-    const taskInput = document.getElementById("task-input");
-    const addTaskButton = document.getElementById("add-task-button");
-    const todoList = document.getElementById("todo-list");
-    const clearCompletedButton = document.getElementById("clear-completed");
+function removeTaskFromLocalStorage(taskText) {
+    let tasks = getTasksFromLocalStorage();
+    tasks = tasks.filter(task => task !== taskText);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
-    // Load tasks from localStorage on page load
-    const loadTasks = () => {
-        const savedTasks = JSON.parse(localStorage.getItem("todoTasks")) || [];
-        savedTasks.forEach(task => {
-            createTaskElement(task.text, task.done);
-        });
-    };
+todoForm.addEventListener('submit', addTask);
 
-    // Save tasks to localStorage
-    const saveTasks = () => {
-        const tasks = Array.from(todoList.querySelectorAll("li")).map(item => ({
-            text: item.querySelector("span").textContent,
-            done: item.classList.contains("done")
-        }));
-        localStorage.setItem("todoTasks", JSON.stringify(tasks));
-    };
+function saveTaskToLocalStorage(taskText) {
+    let tasks = getTasksFromLocalStorage();
+    console.log(tasks);
+    tasks.push(taskText);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
-    // Create a new task element
-    const createTaskElement = (taskText, isDone = false) => {
-        const listItem = document.createElement("li");
-        const taskSpan = document.createElement("span");
-        taskSpan.textContent = taskText;
+function getTasksFromLocalStorage() {
+    const tasks = localStorage.getItem('tasks');
+    return tasks ? JSON.parse(tasks) : [];
+}
 
-        const markDoneButton = document.createElement("button");
-        markDoneButton.textContent = "Mark as Done";
-        markDoneButton.classList.add("mark-done");
-
-        // Mark task as done or toggle back to undone
-        markDoneButton.addEventListener("click", () => {
-            listItem.classList.toggle("done");
-            saveTasks(); // Save changes to localStorage
-        });
-
-        if (isDone) {
-            listItem.classList.add("done");
-        }
-
-        listItem.appendChild(taskSpan);
-        listItem.appendChild(markDoneButton);
+function loadTasks() {
+    const tasks = getTasksFromLocalStorage();
+    tasks.forEach(taskText => {
+        const listItem = createTaskElement(taskText);
         todoList.appendChild(listItem);
-    };
-
-    // Add a new task to the list
-    addTaskButton.addEventListener("click", () => {
-        const taskText = taskInput.value.trim();
-        if (taskText === "") return;
-
-        createTaskElement(taskText);
-        saveTasks(); // Save the new task to localStorage
-        taskInput.value = ""; // Clear the input field
     });
-
-    // Clear completed tasks only
-    clearCompletedButton.addEventListener("click", () => {
-        const tasks = todoList.querySelectorAll("li");
-        tasks.forEach(task => {
-            if (task.classList.contains("done")) {
-                task.remove(); // Remove only completed tasks
-            }
-        });
-        saveTasks(); // Save the updated list to localStorage
-    });
-
-    // Initialize the to-do list
-    loadTasks();
-});
+}
