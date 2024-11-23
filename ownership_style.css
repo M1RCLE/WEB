@@ -163,7 +163,7 @@ img {
     color: var(--white-color);
     background-color: var(--medium-gray-color);
     border: none;
-    border-radius: var(--border-radius-s);
+    border-radius: var(--border-radius-m);
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
