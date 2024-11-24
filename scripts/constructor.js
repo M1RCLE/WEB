@@ -54,7 +54,6 @@ todoForm.addEventListener('submit', addTask);
 
 function saveTaskToLocalStorage(taskText) {
     let tasks = getTasksFromLocalStorage();
-    console.log(tasks);
     tasks.push(taskText);
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
