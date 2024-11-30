@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор Таблицы</title>
+    <link rel="stylesheet" href="index_style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar section-content">
+            <a href="#" class="nav-logo">
+                <h2 class="logo-text">Rust</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="ownership.html" class="nav-link">Themes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="constructor.html" class="nav-link">Constructor</a>
+                </li>
+                <li class="nav-item">
+                    <a href="ownership.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+    <main>
+        <section class="content-section">
+            <div class="todo-container">
+                <h2 class="title">To-Do List</h2>
+                <form id="todo-form">
+                    <input
+                        type="text"
+                        id="todo-input"
+                        placeholder="Write your task here..."
+                        required
+                    />
+                    <button type="submit" class="home-button">Add Task</button>
+                </form>
+                <ul id="todo-list" class="todo-list"></ul>
+            </div>
+        </section>
+    </main>
+    <script src="scripts/constructor.js"></script>
+</body>
+</html>
