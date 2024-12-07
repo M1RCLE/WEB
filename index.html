@@ -17,16 +17,16 @@
                 <ul class="nav-menu">
                     <button id="menu-close-button" class="fas fa-times"></button>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
+                        <a href="index.html" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Themes</a>
+                        <a href="ownership.html" class="nav-link">Themes</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Photos</a>
+                        <a href="constructor.html" class="nav-link">Constructor</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Contact</a>
+                        <a href="ownership.html" class="nav-link">Contact</a>
                     </li>
                 </ul>
                 <button id="menu-open-button" class="fas fa-bars"></button>
@@ -68,28 +68,93 @@
                     </div>
                 </div>
             </section>
+            <section class="menu-section">
+                <h2 class="section-title">Topics</h2>
+                <div class="section-content">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="ownership.html">
+                                <img src="imgs/ownership.png" alt="Ownership" class="menu-image">
+                            </a>
+                            <h3 class="name">Ownership</h3>
+                            <p class="text">New concepts of memory control</p>
+                        </li>
+                        <li class="menu-item"> 
+                            <a href="smart-pointers.html">
+                                <img src="imgs/smart-pointers.png" alt="SmartPointers" class="menu-image">
+                            </a>
+                            <h3 class="name">Smart pointers</h3>
+                            <p class="text">Work with old but gold ideas</p>
+                        </li>
+                        <li class="menu-item">
+                            <a href="traits.html">
+                                <img src="imgs/traits.png" alt="Traits" class="menu-image">
+                            </a>
+                            <h3 class="name">Traits</h3>
+                            <p class="text">Look like interfaces but don't believe them</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section id="users-section" class="about-section">
+                <div class="section-content">
+                    <h2 class="section-title">Users List</h2>
+                    <div id="loader" class="loader" style="display: none;">Loading...</div>
+                    <ul id="user-list"></ul>
+                    <p id="error-message" style="display: none; color: red;">⚠ Что-то пошло не так.</p>
+                </div>
+            </section>
+
         </main>
-        <aside>
-            <h1>Темы моего сайта</h1>
-            <ul>
-                <li><a href="/memory.html">Управление памятью(owners)</a></li>
-                <li><a href="/references.html">Указатели(references)</a></li>
-            </ul>
-        </aside>
-        <!-- <footer>
-            <h3>полезные ссылки</h3>
-            <nav>
-                <a href="https://t.me/Ta1yAnGsHeN">
-                    <img src="/imgs/telegram.png" width="60" height="60">
-                </a>
-                <a href="https://github.com/M1RCLE">
-                    <img src="/imgs/github.png" width="60" height="60">
-                </a>
-                <a href="https://doc.rust-lang.org/book/title-page.html">
-                    <img src="/imgs/rust.png" width="60" height="60">
-                </a>
-            </nav>
-        </footer> -->
-        <script src="script.js"></script>
+        <footer id="footer">
+            <div class="container">
+                <div class="wrapper">
+                  <div>Date</div>
+                  <div>Work done</div>
+                  <div>Hours of work</div>
+                  <div>Hours of study</div>
+                  <div>Personal Hours</div>
+              
+                  <div>01.10.2024</div>
+                  <div>Done</div>
+                  <div>3</div>
+                  <div>3</div>
+                  <div>4</div>
+          
+                  <div>02.10.2024</div>
+                  <div>Done</div>
+                  <div>3</div>
+                  <div>8</div>
+                  <div>4</div>
+          
+                  <div>03.10.2024</div>
+                  <div>Done</div>
+                  <div>7</div>
+                  <div>3</div>
+                  <div>2</div>
+          
+                  <div>04.10.2024</div>
+                  <div>Done</div>
+                  <div>1</div>
+                  <div>2</div>
+                  <div>6</div>
+          
+                  <div>05.10.2024</div>
+                  <div>Done</div>
+                  <div>3</div>
+                  <div>3</div>
+                  <div>4</div>
+          
+                  <div>06.10.2024</div>
+                  <div>Done</div>
+                  <div>3</div>
+                  <div>0</div>
+                  <div>4</div>
+          
+                </div>
+              </div>
+            <p id="load-time-info"></p>
+        </footer>
+        <script src="scripts/script.js"></script>
     </body>
 </html>
