@@ -160,7 +160,7 @@ header .nav-bar {
 /* This is introduction styling part start */
 .about-section {
     padding: 120px 0;
-    background: vat(--light-pink-color);
+    background: var(--light-pink-color);
 }
 
 .about-section .section-content {
@@ -250,6 +250,12 @@ header .nav-bar {
 
 }
 
+.loader {
+    text-align: center;
+    font-size: var(--font-size-l);
+    color: var(--primary-color);
+}
+
 .nav-item .active {
     color: #ff6600;
     font-weight: bold;
@@ -265,8 +271,8 @@ header .nav-bar {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(7, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
 }
 
 .wrapper>div:nth-child(10n+1),
@@ -329,7 +335,6 @@ header .nav-bar {
     }
 
     .nav-bar .nav-menu {
-        display: block;
         position: fixed;
         left: -300px;
         top: 0;
